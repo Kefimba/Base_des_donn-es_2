@@ -254,9 +254,9 @@ export default function AdminDashboardPage() {
   }, []);
 
   const stats = [
-    { label: "Taux de réussite", value: data.success_rate, suffix: "%", icon: IcoRate, delay: ".1s" },
-    { label: "Filières",         value: data.students_by_filiere.length, icon: IcoFil, delay: ".18s" },
-    { label: "Matières",         value: data.avg_by_matiere.length, icon: IcoMat, delay: ".26s" },
+    { label: "Taux de rÃ©ussite", value: data.success_rate, suffix: "%", icon: IcoRate, delay: ".1s" },
+    { label: "FiliÃ¨res",         value: data.students_by_filiere.length, icon: IcoFil, delay: ".18s" },
+    { label: "MatiÃ¨res",         value: data.avg_by_matiere.length, icon: IcoMat, delay: ".26s" },
   ];
 
   return (
@@ -267,9 +267,9 @@ export default function AdminDashboardPage() {
 
         {/* Header */}
         <div className="dash-header">
-          <p className="dash-eyebrow">Administration · Vue d'ensemble</p>
+          <p className="dash-eyebrow">Administration Â· Vue d'ensemble</p>
           <h1 className="dash-title">Dashboard <strong>administrateur</strong></h1>
-          <p className="dash-subtitle">Suivi des performances et statistiques académiques en temps réel</p>
+          <p className="dash-subtitle">Suivi des performances et statistiques acadÃ©miques en temps rÃ©el</p>
         </div>
 
         {/* Stat cards */}
@@ -285,7 +285,7 @@ export default function AdminDashboardPage() {
 
         {/* Pie + Bar */}
         <div className="dash-charts-row two-col">
-          <ChartCard title="Répartition par filière" icon={IcoPie} delay={0.3}>
+          <ChartCard title="Repartition par filiere" icon={IcoPie} delay={0.3}>
             <ResponsiveContainer width="100%" height={300}>
               <PieChart>
                 <Pie data={data.students_by_filiere} dataKey="value" nameKey="name"
@@ -301,7 +301,7 @@ export default function AdminDashboardPage() {
             </ResponsiveContainer>
           </ChartCard>
 
-          <ChartCard title="Moyenne par matière" icon={IcoBar} delay={0.38}>
+          <ChartCard title="Moyenne par matiere" icon={IcoBar} delay={0.38}>
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={data.avg_by_matiere} barSize={28}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -320,7 +320,7 @@ export default function AdminDashboardPage() {
 
         {/* Line chart */}
         <div className="dash-charts-row one-col">
-          <ChartCard title="Évolution des résultats" icon={IcoLine} delay={0.46}>
+          <ChartCard title="Evolution des resultats" icon={IcoLine} delay={0.46}>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={data.results_evolution}>
                 <defs>
