@@ -1,40 +1,35 @@
-services:
-  - type: web
-    name: portail-scolaire-api
-    env: docker
-    plan: free
-    dockerfilePath: ./backend/Dockerfile
-    healthCheckPath: /health
-    autoDeploy: true
-    envVars:
-      - key: SECRET_KEY
-        generateValue: true
-      - key: JWT_SECRET_KEY
-        generateValue: true
-      - key: DB_SERVER
+# Exported from Render on 2026-03-10T01:05:39Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: Base_des_donn-es_2
+      runtime: docker
+      repo: https://github.com/Kefimba/Base_des_donn-es_2
+      plan: free
+      envVars:
+      - key: DB_TRUST_SERVER_CERT
         sync: false
-      - key: DB_NAME
+      - key: DB_ENCRYPT
         sync: false
-      - key: DB_USER
+      - key: DB_DRIVER
         sync: false
       - key: DB_PASSWORD
         sync: false
-      - key: DB_DRIVER
-        value: ODBC Driver 18 for SQL Server
-      - key: DB_ENCRYPT
-        value: yes
-      - key: DB_TRUST_SERVER_CERT
-        value: no
-
-  - type: web
-    name: portail-scolaire-web
-    env: docker
-    plan: free
-    dockerfilePath: ./frontend/Dockerfile
-    autoDeploy: true
-    envVars:
-      - key: VITE_API_BASE
-        fromService:
-          type: web
-          name: portail-scolaire-api
-          property: url
+      - key: DB_USER
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_SERVER
+        sync: false
+      - key: JWT_SECRET_KEY
+        sync: false
+      - key: SECRET_KEY
+        sync: false
+      region: oregon
+      dockerContext: .
+      dockerfilePath: ./Dockerfile
+      autoDeployTrigger: commit
