@@ -122,7 +122,8 @@ Variables critiques backend:
 - `DB_DRIVER=ODBC Driver 18 for SQL Server`
 - `DB_ENCRYPT=yes`
 - `DB_TRUST_SERVER_CERT=no`
-
+## Application en ligne
+Le lien : https://portail-scolaire-web-h3xw.onrender.com/
 ## Endpoints API principaux
 
 - `POST /login`
